@@ -11,17 +11,17 @@
 
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "mago";
-  version = "1.29.0";
+  version = "1.47.5";
 
   src = fetchFromGitHub {
     owner = "carthage-software";
     repo = "mago";
     tag = finalAttrs.version;
-    hash = "sha256-e/LKOQ+GAtdDye/poJdbX/98gDWle3NWIZ2zHwkGkcQ=";
+    hash = "sha256-IUz1BrwJnx+VXq89YbuN6kR7CzCZzkTOG1pQQ9+NpA4=";
     forceFetchGit = true; # Does not download all files otherwise
   };
 
-  cargoHash = "sha256-stjjP8VRHy5k9zMXWGikVNExXRFte0gVBEsbKmPY6U4=";
+  cargoHash = "sha256-r9YgTFIBa3HoKEpDH3SLqmXLLd5HNPCznf/mo1si2rw=";
 
   env = {
     # Get openssl-sys to use pkg-config
@@ -51,6 +51,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
     homepage = "https://github.com/carthage-software/mago";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [
+      atomicptr
       hythera
       patka
     ];
